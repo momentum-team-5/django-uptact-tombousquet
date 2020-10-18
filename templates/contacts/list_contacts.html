@@ -5,6 +5,8 @@
 
 <p><a href="{% url 'add_contact' %}">Add New Contact</a></p>
 
+<p><a href="{% url 'add_note' pk=contact.pk %}">Add New Note</a></p>
+
 <div class="flex flex-wrap">
   {% for contact in contacts %}
   <div class="w-33 pa3">

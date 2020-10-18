@@ -22,3 +22,11 @@ class Contact(models.Model):
     zip_code = USZipCodeField(null=True, blank=True)
     birthday = models.DateField(auto_now=False, null=True, blank=True)
 
+    @property
+    def notes(self):
+        return Note.objects.filter(note=self)
+
+class Note(models.Model):
+    timestamp = models.DateTimeField(auto_now=True)
+    body = models.TextField(null=True, blank=True)
+    contact = models.ForeignKey("Contact", on_delete=models.CASCADE)
