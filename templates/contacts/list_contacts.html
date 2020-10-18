@@ -5,7 +5,6 @@
 
 <p><a href="{% url 'add_contact' %}">Add New Contact</a></p>
 
-<p><a href="{% url 'add_note' pk=contact.pk %}">Add New Note</a></p>
 
 <div class="flex flex-wrap">
   {% for contact in contacts %}
@@ -47,6 +46,7 @@
     <p>
       <a href="{% url 'edit_contact' pk=contact.pk %}">Edit Contact</a><br>    
       <a class="red" href="{% url 'delete_contact' pk=contact.pk %}">Delete Contact</a>
+      <a href="{% url 'add_note' pk=contact.pk %}">Add New Note</a>
     </p>
   </div>
   {% endfor %}
